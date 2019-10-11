@@ -1,0 +1,16 @@
+.minicart-wrapper {
+  float: none;
+  margin-left: 25%;
+  .action.showcart {
+    position: relative;
+    &::before {
+      content: @icon-shopping-bag;
+    }
+    .counter.qty {
+      position: absolute;
+      bottom: -@indent__xs;
+      right: -@indent__xs;
+      border-radius: @indent__xl + 10;
+    }
+  }
+}
