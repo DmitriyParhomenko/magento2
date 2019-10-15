@@ -1,5 +1,5 @@
 input[type="text"].input-wrap {
-  border: 2px solid darken(@color-yellow1, 6%);
+  border: 2px solid @primary__color__gold;
   border-radius: @indent__xl + 10;
   padding: @indent__base (@indent__base - 2);
 }
@@ -17,7 +17,7 @@ input[type="text"].input-wrap {
     width: @indent__xl + 20;
     height: @indent__xl + 10;
     position: absolute;
-    background: darken(@color-yellow1, 8%);
+    background: @primary__color__gold;
     right: 0;
     top: 0;
     .search {
@@ -26,8 +26,9 @@ input[type="text"].input-wrap {
       left: 0;
       margin-left: @indent__s + 7;
       &::before {
-        color: @color-black;
         content: @fa-var-search;
+        color: @color-black;
+        font-size: @indent__s + @indent__xs + 2;
       }
     }
   }

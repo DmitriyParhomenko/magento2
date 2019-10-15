@@ -1,0 +1,66 @@
+.subscribe-container {
+  padding: @indent__l @indent__l;
+  background-color: @primary__color__gold;
+}
+.newsletter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  &-title {
+    font-size: @font-size__xl;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    &::before {
+      content: @fa-var-telegram-plane;
+      color: @color-black;
+      font-size: @indent__xl;
+      margin-right: @indent__base;
+    }
+  }
+  & input[type="email"] {
+    width: @indent__xl * @indent__s + @indent__base;
+    border-radius: @indent__xl + @indent__s;
+    padding: @indent__base 0 @indent__base @indent__l;
+  }
+  & input:not([disabled]):focus {
+    box-shadow: none;
+  }
+  .content {
+    overflow: hidden;
+  }
+}
+.block.newsletter {
+  width: 100%;
+  margin-bottom: 0;
+}
+.block.newsletter {
+  .form.subscribe {
+    position: relative;
+  }
+  .actions {
+    position: absolute;
+    top: 0;
+    right: @indent__xl * 2 + 20;
+  }
+  & .field .control::before {
+    content: none;
+  }
+  .action.subscribe {
+    border-radius: 0 @indent__m @indent__m 0;
+    width: @indent__xl + @indent__xl + @indent__s;
+    padding: (@indent__s + 3) 0;
+    width: @indent__s * @indent__s;
+    background: @color-black;
+    border: none;
+  }
+}

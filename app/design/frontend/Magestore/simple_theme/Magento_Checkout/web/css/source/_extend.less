@@ -11,7 +11,15 @@
       bottom: -@indent__xs;
       right: -@indent__xs;
       border-radius: @indent__xl + 10;
+      background: @primary__color__gold;
+      color: @color-black;
     }
+  }
+  .action.close::before {
+    content: @fa-var-window-close;
   }
 }
 
+.minicart-wrapper .action.showcart.active::before {
+  content: @icon-shopping-bag;
+}
