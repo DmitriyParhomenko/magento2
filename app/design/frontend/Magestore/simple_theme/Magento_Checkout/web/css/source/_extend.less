@@ -5,6 +5,7 @@
     position: relative;
     &::before {
       content: @icon-shopping-bag;
+      font-family: @icons__font-name-fa;
     }
     .counter.qty {
       position: absolute;
@@ -17,9 +18,11 @@
   }
   .action.close::before {
     content: @fa-var-window-close;
+    font-family: @icons__font-name-fa;
   }
 }
 
 .minicart-wrapper .action.showcart.active::before {
   content: @icon-shopping-bag;
+  font-family: @icons__font-name-fa;
 }
