@@ -13,7 +13,10 @@
 
 //  Path
 @icons__font-path: "@{baseDir}fonts/Blank-Theme-Icons/Blank-Theme-Icons";
-@icons__font-path-fa: "@{baseDir}fonts/Font-Awesome-Icons/fa-brands-400";
+@icons__font-path-fa-brands: "@{baseDir}fonts/Font-Awesome-Icons/fa-brands-400";
+@icons__font-path-fa-regular: "@{baseDir}fonts/Font-Awesome-Icons/fa-regular-400";
+@icons__font-path-fa-solid: "@{baseDir}fonts/Font-Awesome-Icons/fa-solid-900";
+
 
 //  Names
 @icons__font-name: 'icons-blank-theme'; // ToDo UI: we need to rename (it shouldn't use blank theme name) or move icon fonts to blank theme
@@ -244,3 +247,26 @@
 
 //  Disable filters output in css
 @disable-filters: false;
+
+//
+//  Typography mixin
+//  _____________________________________________
+
+.lib-font-face(
+  @family-name,
+  @font-path,
+  @font-weight: normal,
+  @font-style: normal
+) {
+  @font-face {
+    font-family: @family-name;
+    src: url('@{font-path}.eot');
+    src: url('@{font-path}.eot?#iefix') format('embedded-opentype'),
+    url('@{font-path}.woff2') format('woff2'),
+    url('@{font-path}.woff') format('woff'),
+    url('@{font-path}.ttf') format('truetype'),
+    url('@{font-path}.svg#fontawesome') format('svg');
+    font-weight: @font-weight;
+    font-style: @font-style;
+  }
+}

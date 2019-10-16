@@ -1,36 +1,72 @@
-input[type="text"].input-wrap {
-  border: 2px solid @primary__color__gold;
-  border-radius: @indent__xl + 10;
-  padding: @indent__base (@indent__base - 2);
-}
+//
+//  Common
+//  _____________________________________________
 
-.block-search {
-  float: none;
-  padding-left: 0;
-  width: 35%;
-  border-radius: 50px;
-  overflow: hidden;
-  .control {
-    padding: 0;
+& when (@media-common = true) {
+  input[type="text"].input-wrap {
+    border: 2px solid @primary__color__gold;
+    border-radius: @indent__xl + 10;
+    padding: @indent__base (@indent__base - 2);
   }
-  .actions {
-    width: @indent__xl + 20;
-    height: @indent__xl + 10;
-    position: absolute;
-    background: @primary__color__gold;
-    right: 0;
-    top: 0;
-    .search {
-      margin-top: @indent__xs;
-      top: 0;
-      left: 0;
-      margin-left: @indent__s + 7;
-      &::before {
-        content: @fa-var-search;
-        font-family: @icons__font-name-fa;
-        color: @color-black;
-        font-size: @indent__s + @indent__xs + 2;
+
+  .block-search {
+    float: none;
+    padding-left: 0;
+    .control {
+      padding: 0;
+      border: 0;
+    }
+    .actions {
+      display: none;
+      .search {
+        margin-top: @indent__xs;
+        top: 0;
+        left: 0;
+        margin-left: @indent__s + 7;
+        &::before {
+          content: @fa-var-search;
+          font-family: @icons__font-name-fa;
+          color: @color-black;
+          font-size: @indent__s + @indent__xs + 2;
+        }
       }
     }
   }
 }
+
+//input[type="text"].input-wrap {
+//  border: 2px solid @primary__color__gold;
+//  border-radius: @indent__xl + 10;
+//  padding: @indent__base (@indent__base - 2);
+//}
+//
+//.block-search {
+//  float: none;
+//  padding-left: 0;
+//  width: 35%;
+//  border-radius: 50px;
+//  overflow: hidden;
+//  .control {
+//    padding: 0;
+//  }
+//  .actions {
+//    width: @indent__xl + 20;
+//    height: @indent__xl + 10;
+//    position: absolute;
+//    background: @primary__color__gold;
+//    right: 0;
+//    top: 0;
+//    .search {
+//      margin-top: @indent__xs;
+//      top: 0;
+//      left: 0;
+//      margin-left: @indent__s + 7;
+//      &::before {
+//        content: @fa-var-search;
+//        font-family: @icons__font-name-fa;
+//        color: @color-black;
+//        font-size: @indent__s + @indent__xs + 2;
+//      }
+//    }
+//  }
+//}
