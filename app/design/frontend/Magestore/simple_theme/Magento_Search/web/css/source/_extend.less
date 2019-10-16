@@ -5,10 +5,9 @@
 & when (@media-common = true) {
   input[type="text"].input-wrap {
     border: 2px solid @primary__color__gold;
-    border-radius: @indent__xl + 10;
-    padding: @indent__base (@indent__base - 2);
+    border-radius: @indent__xll;
+    padding: @indent__base;
   }
-
   .block-search {
     float: none;
     padding-left: 0;
@@ -18,55 +17,46 @@
     }
     .actions {
       display: none;
-      .search {
-        margin-top: @indent__xs;
-        top: 0;
-        left: 0;
-        margin-left: @indent__s + 7;
-        &::before {
-          content: @fa-var-search;
-          font-family: @icons__font-name-fa;
-          color: @color-black;
-          font-size: @indent__s + @indent__xs + 2;
-        }
-      }
     }
   }
 }
 
-//input[type="text"].input-wrap {
-//  border: 2px solid @primary__color__gold;
-//  border-radius: @indent__xl + 10;
-//  padding: @indent__base (@indent__base - 2);
-//}
 //
-//.block-search {
-//  float: none;
-//  padding-left: 0;
-//  width: 35%;
-//  border-radius: 50px;
-//  overflow: hidden;
-//  .control {
-//    padding: 0;
-//  }
-//  .actions {
-//    width: @indent__xl + 20;
-//    height: @indent__xl + 10;
-//    position: absolute;
-//    background: @primary__color__gold;
-//    right: 0;
-//    top: 0;
-//    .search {
-//      margin-top: @indent__xs;
-//      top: 0;
-//      left: 0;
-//      margin-left: @indent__s + 7;
-//      &::before {
-//        content: @fa-var-search;
-//        font-family: @icons__font-name-fa;
-//        color: @color-black;
-//        font-size: @indent__s + @indent__xs + 2;
-//      }
-//    }
-//  }
-//}
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .block-search {
+    width: 400px;
+    overflow: hidden;
+    .actions {
+      display: block;
+      .search {
+        width: 70px;
+        height: 32px;
+        float: none;
+        background: @primary__color__gold;
+        top: 0;
+        right: 0;
+        border-radius: 0 @indent__xll @indent__xll 0;
+        &::before {
+          content: @fa-var-search;
+          font-family: @icons__font-name-fa;
+          color: @color-black;
+          font-size: @font-size__l;
+        }
+      }
+    }
+    .control {
+      padding: 0;
+    }
+  }
+  .block-search .label.active + .control input {
+    position: static;
+    margin-left: 0;
+    width: 400px;
+  }
+  .block-search .action.search:hover {
+    background: @primary__color__gold;
+  }
+}

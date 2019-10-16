@@ -3,10 +3,22 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+
+  //
+  //  Header
+  //  --------------------------------------------
+
   .header {
     display: flex;
     display: -moz-flex;
     display: -webkit-flex;
+    justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    padding: @indent__s 0;
     &-contacts {
       display: flex;
       display: -moz-flex;
@@ -23,6 +35,7 @@
         font-size: @font-size__s;
       }
       &-phone {
+        margin-right: @indent__ss;
         &::before {
           content: @fa-var-phone;
           font-family: @icons__font-name-fa;
@@ -42,7 +55,15 @@
       }
     }
   }
-  .links {
+  a, .links {
+    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    color: @color-gray-darken3;
+    &:hover {
+      color: @color-gray-middle3;
+    }
     li a {
       color: @color-gray-darken3;
     }
@@ -73,102 +94,63 @@
     margin: 0 0 0 @indent__xs;
   }
   .page-header {
-    margin-bottom: @indent__xl + @indent__s;
+    margin-bottom: @indent__xll;
   }
   .logo {
     margin: 0;
+    width: 120px;
+    margin-right: @indent__ss;
   }
   .block-search .label.active + .control input {
     position: absolute;
-    top: @indent__xl + @indent__s;
+    top: 85px;
     left: 50%;
-    margin-left: -@indent__s * @indent__s * 2 + @indent__xl + @indent__s;
-    width: @indent__l * @indent__s;
+    margin-left: -150px;
+    width: 300px;
+    z-index: @z-index-1;
   }
   input:not([disabled]):focus {
     box-shadow: none;
   }
 }
 
+//
+//  Desktop
+//  _____________________________________________
 
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .header.panel > .header.links {
+    width: auto;
+    display: flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  }
+  .header.panel > .header.links > li {
+    vertical-align: baseline;
+    margin: 0 0 0 @indent__xs;
+  }
+  .header {
+    justify-content: space-between;
+     -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+    &-contacts {
+      width: auto;
+      a {
+        font-size: @h4__font-size;
+      }
+    }
+  }
+  .header.content {
+    padding: @indent__ss;
+  }
+  .logo {
+    width: auto;
+    margin-right: 10%;
+  }
+}
 
-//.header {
-//  display: flex;
-//    display: -moz-flex;
-//    display: -webkit-flex;
-//  justify-content: space-between;
-//    -webkit-box-pack: justify;
-//    -ms-flex-pack: justify;
-//  align-items: center;
-//    -webkit-box-align: center;
-//    -ms-flex-align: center;
-//  &-contacts {
-//    display: flex;
-//    display: -moz-flex;
-//    display: -webkit-flex;
-//    justify-content: space-between;
-//    -webkit-box-pack: justify;
-//    -ms-flex-pack: justify;
-//    align-items: center;
-//    -webkit-box-align: center;
-//    -ms-flex-align: center;
-//    width: 27%;
-//    a {
-//      color: @color-gray-darken3;
-//    }
-//    &-phone {
-//      &::before {
-//        content: @fa-var-phone;
-//        font-family: @icons__font-name-fa;
-//        color: @primary__color__gold;
-//        font-size: @font-size__l;
-//        margin-right: @indent__s;
-//      }
-//    }
-//    &-email {
-//      &::before {
-//        content: @fa-var-envelope;
-//        font-family: @icons__font-name-fa;
-//        color: @primary__color__gold;
-//        font-size: @font-size__l;
-//        margin-right: @indent__s;
-//      }
-//    }
-//  }
-//}
-//.links {
-//  li a {
-//    color: @color-gray-darken3;
-//  }
-//  .authorization-link {
-//    display: flex;
-//    display: -moz-flex;
-//    display: -webkit-flex;
-//    align-items: center;
-//    -webkit-box-align: center;
-//    -ms-flex-align: center;
-//    margin-right: -@indent__m;
-//    &::before {
-//      content: @fa-var-user;
-//      font-family: @icons__font-name-fa;
-//      color: @color-gray-darken3;
-//      font-size: @font-size__l;
-//      margin-right: @indent__xs;
-//    }
-//    &::after {
-//      content: 'or';
-//      color: @color-gray-light3;
-//      margin-left: @indent__s;
-//    }
-//  }
-//}
-//.header.panel > .header.links > li {
-//  vertical-align: baseline;
-//  margin: 0 0 0 @indent__xs;
-//}
-//.page-header {
-//  margin-bottom: @indent__xl + @indent__s;
-//}
-//.logo {
-//  margin: 0 25% 0 0;
-//}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+  .logo {
+    margin-right: 25%;
+  }
+}

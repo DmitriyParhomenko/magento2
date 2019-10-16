@@ -1,28 +1,53 @@
-.minicart-wrapper {
-  float: none;
-  margin-left: 25%;
-  .action.showcart {
-    position: relative;
-    &::before {
-      content: @icon-shopping-bag;
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .minicart-wrapper {
+    float: none;
+    margin-left: @indent__s;
+    .action.showcart {
+      position: relative;
+      &::before {
+        content: @icon-shopping-bag;
+        font-family: @icons__font-name-fa;
+      }
+      .counter.qty {
+        position: absolute;
+        bottom: -@indent__xs;
+        right: -@indent__xs;
+        border-radius: @indent__xll;
+        background: @primary__color__gold;
+        color: @color-black;
+      }
+    }
+    .action.close::before {
+      content: @fa-var-window-close;
       font-family: @icons__font-name-fa;
     }
-    .counter.qty {
-      position: absolute;
-      bottom: -@indent__xs;
-      right: -@indent__xs;
-      border-radius: @indent__xl + 10;
-      background: @primary__color__gold;
-      color: @color-black;
+    .block-minicart {
+      right: -@indent__ll;
     }
   }
-  .action.close::before {
-    content: @fa-var-window-close;
+
+  .minicart-wrapper .action.showcart.active::before {
+    content: @icon-shopping-bag;
     font-family: @icons__font-name-fa;
   }
 }
 
-.minicart-wrapper .action.showcart.active::before {
-  content: @icon-shopping-bag;
-  font-family: @icons__font-name-fa;
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .minicart-wrapper {
+    margin-left: 10%;
+  }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+  .minicart-wrapper {
+    margin-left: 25%;
+  }
 }
