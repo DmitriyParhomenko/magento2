@@ -51,6 +51,9 @@
                     <argument name="cache_lifetime" xsi:type="string">3600</argument>
                 </arguments>
             </block>
+            <referenceBlock name="footer_links" >
+                <block class="Magento\Framework\View\Element\Template" name="footer.links.title" template="Magento_Theme::footer_links_title.phtml" before="-"/>
+            </referenceBlock>
             <container name="footer_copyright" htmlClass="footer-main-copyright" htmlTag="div">
                 <container name="footer_copyright_container" htmlClass="footer content footer-copyright-container" htmlTag="div" >
                     <block class="Magento\Cms\Block\Block" name="footer_pay">
