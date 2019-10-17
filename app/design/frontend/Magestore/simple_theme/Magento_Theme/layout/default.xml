@@ -26,7 +26,7 @@
         </referenceBlock>
         <referenceContainer name="footer-container">
             <container name="subscribe_container" htmlClass="subscribe-container" htmlTag="div" before="-">
-                <container name="page_main" label="Before Page Footer" htmlTag="div" htmlClass="page-main subscribe-container" before="-"/>
+                <container name="page_main" label="Before Page Footer" htmlTag="div" htmlClass="page-main" before="-"/>
             </container>
             <container name="footer_main_contact" htmlClass="footer-main-contact" htmlTag="div">
                 <container name="logo_footer_container" htmlClass="footer-logo" htmlTag="div">

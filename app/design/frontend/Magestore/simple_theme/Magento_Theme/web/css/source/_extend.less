@@ -103,16 +103,14 @@
   //
   //  Footer
   //  --------------------------------------------
-
   .footer.content {
-    background-color: @color-gray95;
     padding-top: @indent__xs;
     margin-top: 0;
     border-top: 0;
+    padding-bottom: 0;
   }
-  .footer.content.footer-copyright-container {
-    background-color: @color-gray62;
-    padding-bottom: @indent__xs;
+  .page-footer {
+    background-color: @color-gray95;
   }
   .footer {
     &-main-contact {
@@ -240,6 +238,13 @@
   .links:hover {
     color: @color-black;
   }
+  .footer-main-copyright {
+    background-color: @color-gray62;
+    padding-bottom: @indent__xs;
+    .copyright {
+      text-align: center;
+    }
+  }
 
 }
 
@@ -263,6 +268,11 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+  //
+  //  Header
+  //  --------------------------------------------
+
   .header.panel > .header.links {
     .lib-vendor-prefix-display();
     width: auto;
@@ -299,16 +309,64 @@
   //  --------------------------------------------
 
   .footer {
+    &-logo {
+      .lib-vendor-prefix-justify (
+        @_value: flex-start,
+        @_value_pack: start
+      );
+      margin-bottom: @indent__base;
+    }
+    &-contact-wrap {
+      margin-bottom: @indent__base;
+      &-phone {
+        font-size: @font-size__l;
+      }
+    }
+    &-social-icons {
+      .lib-vendor-prefix-justify (
+        @_value: flex-start,
+        @_value_pack: start
+      );
+    }
     &-menu {
+      margin-top: @indent__base;
       .lib-vendor-prefix-display();
+      &-title {
+        color: @color-black;
+        font-weight: bold;
+        padding-bottom: @indent__base;
+      }
+      li.footer-menu-wrap-link {
+        padding-bottom: @indent__xs;
+      }
     }
     &-main-contact {
       .lib-vendor-prefix-display();
       .lib-vendor-prefix-flex-direction();
     }
   }
+  ul.footer-menu-wrap.footer-menu-wrap-second {
+    padding: @indent__xl 0 0 @indent__xl;
+  }
   .footer.content {
     .lib-vendor-prefix-display();
+    .lib-vendor-prefix-justify ();
+  }
+  ul.footer.links {
+    margin-top: @indent__base;
+    text-align: left;
+    & .links-title {
+      margin-bottom: @indent__base;
+    }
+  }
+  .footer.content .links {
+    padding: 0;
+  }
+  .footer-main-copyright {
+    margin-top: @indent__xl;
+  }
+  .footer-copyright-container {
+    .lib-vendor-prefix-justify();
   }
 }
 
