@@ -148,6 +148,35 @@
         }
       }
     }
+    &-pay {
+      &-icons {
+        .lib-vendor-prefix-display();
+      }
+      &-mastercard {
+        a::before {
+          content: @fa-var-cc-mastercard;
+          font-family: @icons__font-name-fa;
+          color: @color-gray-darken3;
+          font-size: @font-size__l;
+        }
+      }
+      &-visa {
+        a::before {
+          content: @fa-var-cc-visa;
+          font-family: @icons__font-name-fa;
+          color: @color-gray-darken3;
+          font-size: @font-size__l;
+        }
+      }
+      &-paypal {
+        a::before {
+          content: @fa-var-cc-paypal;
+          font-family: @icons__font-name-fa;
+          color: @color-gray-darken3;
+          font-size: @font-size__l;
+        }
+      }
+    }
   }
 
 }

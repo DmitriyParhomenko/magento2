@@ -51,11 +51,22 @@
                     <argument name="cache_lifetime" xsi:type="string">3600</argument>
                 </arguments>
             </block>
+            <container name="footer_copyright" htmlClass="footer-main-copyright" htmlTag="div">
+                <container name="footer_copyright_container" htmlClass="footer content footer-copyright-container" htmlTag="div" >
+                    <block class="Magento\Cms\Block\Block" name="footer_pay">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer_pay</argument>
+                            <argument name="cache_lifetime" xsi:type="string">3600</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </container>
         </referenceContainer>
         <move element="form.subscribe" destination="page_main" before="-" />
         <move element="footer_main_contact" destination="footer" before="-" />
         <move element="footer_menu" destination="footer" after="footer_main_contact" />
-        <move element="copyright" destination="footer-container" after="-" />
+        <move element="footer_copyright" destination="footer-container" after="-" />
+        <move element="copyright" destination="footer_copyright_container" before="-" />
         <referenceBlock name="report.bugs" remove="true" />
     </body>
 </page>
