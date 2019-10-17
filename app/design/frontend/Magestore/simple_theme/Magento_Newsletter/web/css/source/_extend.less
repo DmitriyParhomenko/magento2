@@ -51,7 +51,7 @@
     }
     .actions {
       position: absolute;
-      bottom: 0;
+      top: @indent__base;
       right: 86px;
     }
     & .field .control::before {
@@ -85,6 +85,9 @@
   }
   .block.newsletter {
     width: 100%;
+    .actions {
+      top: 0;
+    }
     .action.subscribe {
       border-radius: 0 @indent__m @indent__m 0;
     }
