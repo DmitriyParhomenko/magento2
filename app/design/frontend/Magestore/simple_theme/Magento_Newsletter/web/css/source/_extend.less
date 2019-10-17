@@ -8,27 +8,18 @@
     background-color: @primary__color__gold;
   }
   .newsletter {
-    display: flex;
-      display: -webkit-box;
-      display: -ms-flexbox;
-    align-items: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-    justify-content: space-between;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-    flex-direction: column;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
+    .lib-vendor-prefix-display();
+    .lib-vendor-prefix-justify();
+    .lib-vendor-prefix-flex-direction ();
+    .lib-vendor-box-align (
+      @_value: center
+    );
     &-title {
+      .lib-vendor-prefix-display();
+      .lib-vendor-box-align (
+        @_value: center
+      );
       font-size: @font-size__xl;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
       &::before {
         content: @fa-var-telegram-plane;
         color: @color-black;
@@ -82,12 +73,12 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
   .newsletter {
-    flex-direction: row;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-    flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
+    .lib-vendor-prefix-flex-direction (
+      @_value: row
+    );
+    .lib-vendor-prefix-flex-wrap (
+      @_value: wrap
+    );
     & input[type="email"] {
       margin-top: 0;
     }

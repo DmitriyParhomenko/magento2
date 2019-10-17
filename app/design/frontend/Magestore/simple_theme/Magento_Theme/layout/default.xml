@@ -28,7 +28,20 @@
             <container name="subscribe_container" htmlClass="subscribe-container" htmlTag="div" before="-">
                 <container name="page_main" label="Before Page Footer" htmlTag="div" htmlClass="page-main subscribe-container" before="-"/>
             </container>
+            <container name="logo_footer_container" htmlClass="logo_footer" htmlTag="div">
+                <block class="Magento\Theme\Block\Html\Header\Logo" name="logo_footer" />
+            </container>
+            <block class="Magento\Cms\Block\Block" name="footer_menu">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_menu</argument>
+                    <argument name="cache_lifetime" xsi:type="string">3600</argument>
+                </arguments>
+            </block>
         </referenceContainer>
         <move element="form.subscribe" destination="page_main" before="-" />
+        <move element="logo_footer_container" destination="footer" before="-" />
+        <move element="footer_menu" destination="footer" after="logo_footer" />
+        <move element="copyright" destination="footer-container" after="-" />
+        <referenceBlock name="report.bugs" remove="true" />
     </body>
 </page>
