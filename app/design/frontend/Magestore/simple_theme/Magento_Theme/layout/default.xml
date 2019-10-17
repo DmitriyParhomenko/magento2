@@ -28,8 +28,16 @@
             <container name="subscribe_container" htmlClass="subscribe-container" htmlTag="div" before="-">
                 <container name="page_main" label="Before Page Footer" htmlTag="div" htmlClass="page-main subscribe-container" before="-"/>
             </container>
-            <container name="logo_footer_container" htmlClass="logo_footer" htmlTag="div">
-                <block class="Magento\Theme\Block\Html\Header\Logo" name="logo_footer" />
+            <container name="footer_main_contact" htmlClass="footer-main-contact" htmlTag="div">
+                <container name="logo_footer_container" htmlClass="footer-logo" htmlTag="div">
+                    <block class="Magento\Theme\Block\Html\Header\Logo" name="logo_footer" />
+                </container>
+                <block class="Magento\Cms\Block\Block" name="footer_contact">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_contact</argument>
+                        <argument name="cache_lifetime" xsi:type="string">3600</argument>
+                    </arguments>
+                </block>
             </container>
             <block class="Magento\Cms\Block\Block" name="footer_menu">
                 <arguments>
@@ -39,8 +47,10 @@
             </block>
         </referenceContainer>
         <move element="form.subscribe" destination="page_main" before="-" />
-        <move element="logo_footer_container" destination="footer" before="-" />
-        <move element="footer_menu" destination="footer" after="logo_footer" />
+        <move element="footer_main_contact" destination="footer" before="-" />
+        <move element="logo_footer_container" destination="footer_main_contact" before="-" />
+        <move element="footer_contact" destination="footer_main_contact" after="logo_footer_container" />
+        <move element="footer_menu" destination="footer" after="footer_main_contact" />
         <move element="copyright" destination="footer-container" after="-" />
         <referenceBlock name="report.bugs" remove="true" />
     </body>
