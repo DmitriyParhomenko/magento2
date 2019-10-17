@@ -104,13 +104,51 @@
   //  Footer
   //  --------------------------------------------
 
-  .footer-logo {
-    .logo {
-      max-width: 100%;
-      margin: 0;
+  .footer {
+    &-logo {
+      .logo {
+        max-width: 100%;
+        margin: 0;
+      }
+    }
+    &-social {
+      &-icons {
+        .lib-vendor-prefix-display();
+      }
+      &-facebook {
+        a::before {
+          content: @fa-var-facebook-f;
+          font-family: @icons__font-name-fa;
+          color: @color-gray-darken3;
+          font-size: @font-size__l;
+        }
+      }
+      &-twitter {
+        a::before {
+          content: @fa-var-twitter;
+          font-family: @icons__font-name-fa;
+          color: @color-gray-darken3;
+          font-size: @font-size__l;
+        }
+      }
+      &-google {
+        a::before {
+          content: @fa-var-google;
+          font-family: @icons__font-name-fa;
+          color: @color-gray-darken3;
+          font-size: @font-size__l;
+        }
+      }
+      &-linkedin {
+        a::before {
+          content: @fa-var-linkedin;
+          font-family: @icons__font-name-fa;
+          color: @color-gray-darken3;
+          font-size: @font-size__l;
+        }
+      }
     }
   }
-
 
 }
 

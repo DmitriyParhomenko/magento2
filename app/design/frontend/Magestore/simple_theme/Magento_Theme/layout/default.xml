@@ -38,6 +38,12 @@
                         <argument name="cache_lifetime" xsi:type="string">3600</argument>
                     </arguments>
                 </block>
+                <block class="Magento\Cms\Block\Block" name="footer_social">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_social</argument>
+                        <argument name="cache_lifetime" xsi:type="string">3600</argument>
+                    </arguments>
+                </block>
             </container>
             <block class="Magento\Cms\Block\Block" name="footer_menu">
                 <arguments>
@@ -48,8 +54,6 @@
         </referenceContainer>
         <move element="form.subscribe" destination="page_main" before="-" />
         <move element="footer_main_contact" destination="footer" before="-" />
-        <move element="logo_footer_container" destination="footer_main_contact" before="-" />
-        <move element="footer_contact" destination="footer_main_contact" after="logo_footer_container" />
         <move element="footer_menu" destination="footer" after="footer_main_contact" />
         <move element="copyright" destination="footer-container" after="-" />
         <referenceBlock name="report.bugs" remove="true" />
