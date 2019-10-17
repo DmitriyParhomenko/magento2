@@ -51,12 +51,14 @@
       padding: 0;
     }
   }
-  .block-search .label.active + .control input {
-    position: static;
-    margin-left: 0;
-    width: 400px;
-  }
-  .block-search .action.search:hover {
-    background: @primary__color__gold;
+  .block-search {
+    & .label.active + .control input {
+      position: static;
+      margin-left: 0;
+      width: 400px;
+    }
+    & .action.search:hover {
+      background: @primary__color__gold;
+    }
   }
 }

@@ -20,6 +20,10 @@
         background: @primary__color__gold;
         color: @color-black;
       }
+      &.active::before {
+        content: @icon-shopping-bag;
+        font-family: @icons__font-name-fa;
+      }
     }
     .action.close::before {
       content: @fa-var-window-close;
@@ -28,11 +32,6 @@
     .block-minicart {
       right: -@indent__ll;
     }
-  }
-
-  .minicart-wrapper .action.showcart.active::before {
-    content: @icon-shopping-bag;
-    font-family: @icons__font-name-fa;
   }
 }
 
