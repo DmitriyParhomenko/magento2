@@ -62,6 +62,7 @@
                             <argument name="cache_lifetime" xsi:type="string">3600</argument>
                         </arguments>
                     </block>
+                    <block class="Magento\Framework\View\Element\Template" name="button.scroll.top" template="Magento_Theme::button_scroll_top.phtml" after="-"/>
                 </container>
             </container>
         </referenceContainer>
