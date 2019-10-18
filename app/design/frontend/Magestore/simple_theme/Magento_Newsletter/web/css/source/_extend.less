@@ -1,0 +1,104 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .subscribe-container {
+    padding: @indent__ss 0;
+    background-color: @primary__color__gold;
+  }
+  .newsletter {
+    .lib-vendor-prefix-display();
+    .lib-vendor-prefix-justify();
+    .lib-vendor-prefix-flex-direction ();
+    .lib-vendor-box-align (
+      @_value: center
+    );
+    &-title {
+      .lib-vendor-prefix-display();
+      .lib-vendor-box-align (
+        @_value: center
+      );
+      font-size: @font-size__xl;
+      &::before {
+        content: @fa-var-telegram-plane;
+        color: @color-black;
+        font-size: @font-size__xll;
+        margin-right: @indent__base;
+        font-family: @icons__font-name-fa;
+      }
+    }
+    & input[type="email"] {
+      width: 300px;
+      border-radius: @indent__xll;
+      padding: @indent__base 0 @indent__base @indent__l;
+      margin-top: @indent__base;
+    }
+    & input:not([disabled]):focus {
+      box-shadow: none;
+    }
+    .content {
+      overflow: hidden;
+    }
+  }
+  .block.newsletter {
+    width: 100%;
+    margin-bottom: 0;
+    .form.subscribe {
+      position: relative;
+    }
+    .actions {
+      position: absolute;
+      top: @indent__base;
+      right: 86px;
+    }
+    & .field .control::before {
+      content: none;
+    }
+    .action.subscribe {
+      border-radius: 0 @indent__m @indent__m 0;
+      width: 90px;
+      padding: 13px 0;
+      background: @color-black;
+      border: none;
+    }
+  }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .subscribe-container {
+    margin-bottom: @indent__xl;
+  }
+  .newsletter {
+    .lib-vendor-prefix-flex-direction (
+      @_value: row
+    );
+    .lib-vendor-prefix-flex-wrap (
+      @_value: wrap
+    );
+    & input[type="email"] {
+      margin-top: 0;
+    }
+  }
+  .block.newsletter {
+    width: 100%;
+    .actions {
+      top: 0;
+    }
+    .action.subscribe {
+      border-radius: 0 @indent__m @indent__m 0;
+    }
+  }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+  .newsletter {
+    & input[type="email"] {
+      width: 420px;
+    }
+  }
+}

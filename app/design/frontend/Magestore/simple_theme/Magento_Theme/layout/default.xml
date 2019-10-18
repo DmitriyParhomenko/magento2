@@ -8,6 +8,15 @@
 <page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 
     <body>
+        <referenceBlock name="header.panel">
+            <block class="Magento\Cms\Block\Block" name="header_contacts" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header_contacts</argument>
+                    <argument name="cache_lifetime" xsi:type="string">3600</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="header" remove="true"/>
         <referenceBlock name="logo">
             <arguments>
                 <argument name="logo_file" xsi:type="string">images/logo.png</argument>
@@ -15,9 +24,53 @@
                 <argument name="logo_img_height" xsi:type="number">150</argument>
             </arguments>
         </referenceBlock>
-<!--         <move element="logo" destination="footer" after="copyright" />-->
-        <container name="div.sidebar.additional" htmlTag="div" htmlClass="sidebar sidebar-additional" after="div.sidebar.main">
-            <container name="sidebar.additional" as="sidebar_additional" label="Sidebar Additional"/>
-        </container>
+        <referenceContainer name="footer-container">
+            <container name="subscribe_container" htmlClass="subscribe-container" htmlTag="div" before="-">
+                <container name="page_main" label="Before Page Footer" htmlTag="div" htmlClass="page-main" before="-"/>
+            </container>
+            <container name="footer_main_contact" htmlClass="footer-main-contact" htmlTag="div">
+                <container name="logo_footer_container" htmlClass="footer-logo" htmlTag="div">
+                    <block class="Magento\Theme\Block\Html\Header\Logo" name="logo_footer" />
+                </container>
+                <block class="Magento\Cms\Block\Block" name="footer_contact">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_contact</argument>
+                        <argument name="cache_lifetime" xsi:type="string">3600</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" name="footer_social">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_social</argument>
+                        <argument name="cache_lifetime" xsi:type="string">3600</argument>
+                    </arguments>
+                </block>
+            </container>
+            <block class="Magento\Cms\Block\Block" name="footer_menu">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_menu</argument>
+                    <argument name="cache_lifetime" xsi:type="string">3600</argument>
+                </arguments>
+            </block>
+            <referenceBlock name="footer_links" >
+                <block class="Magento\Framework\View\Element\Template" name="footer.links.title" template="Magento_Theme::footer_links_title.phtml" before="-"/>
+            </referenceBlock>
+            <container name="footer_copyright" htmlClass="footer-main-copyright" htmlTag="div">
+                <container name="footer_copyright_container" htmlClass="footer content footer-copyright-container" htmlTag="div" >
+                    <block class="Magento\Cms\Block\Block" name="footer_pay">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer_pay</argument>
+                            <argument name="cache_lifetime" xsi:type="string">3600</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Template" name="button.scroll.top" template="Magento_Theme::button_scroll_top.phtml" after="-"/>
+                </container>
+            </container>
+        </referenceContainer>
+        <move element="form.subscribe" destination="page_main" before="-" />
+        <move element="footer_main_contact" destination="footer" before="-" />
+        <move element="footer_menu" destination="footer" after="footer_main_contact" />
+        <move element="footer_copyright" destination="footer-container" after="-" />
+        <move element="copyright" destination="footer_copyright_container" before="-" />
+        <referenceBlock name="report.bugs" remove="true" />
     </body>
 </page>
