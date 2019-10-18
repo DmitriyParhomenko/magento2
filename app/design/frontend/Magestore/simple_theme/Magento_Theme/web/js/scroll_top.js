@@ -17,7 +17,7 @@ define([
 
         btnScroll: function () {
 
-            var btn = $('.scrolltop');
+            var btn = this.element;
 
             $(window).scroll(function() {
                 if ($(window)[0].pageYOffset > 50) {
